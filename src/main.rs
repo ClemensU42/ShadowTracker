@@ -1,9 +1,13 @@
-use fltk::{window::Window, app::App, prelude::*};
+use dioxus::prelude::*;
 
 fn main() {
-    let app = App::default();
-    let mut wind = Window::new(100, 100, 100, 100, "ShadowTracker");
-    wind.end();
-    wind.show();
-    app.run().unwrap(); 
+    dioxus_desktop::launch(App);
+}
+
+fn App(cx: Scope) -> Element{
+    cx.render(rsx!{
+        div {
+            "Hello world!"
+        }
+    })
 }
